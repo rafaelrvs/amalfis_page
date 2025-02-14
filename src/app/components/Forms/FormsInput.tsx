@@ -1,4 +1,4 @@
-import React, { ElementType } from 'react';
+import React from 'react';
 
 
 type FormsInputProps = React.ComponentProps<'input'>&{

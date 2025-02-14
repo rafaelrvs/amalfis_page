@@ -1,12 +1,8 @@
-import React, { ElementType } from 'react'
+import React from 'react'
 
-interface FormsLabelProps{
-    label:ElementType
-    text:string
-}
-
-export  default function FormsLabel ({label:Label}:FormsLabelProps) {
+type FormsLabelProps = React.ComponentProps<'label'>
+export  default function FormsLabel ({children,className, ...props}:FormsLabelProps) {
   return (
-   <label htmlFor=""></label>
+   <label className={className} {...props}>{children}</label>
   )
 }
