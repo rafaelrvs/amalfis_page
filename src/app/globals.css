@@ -12,7 +12,38 @@
   --font-poppins: "Poppins", sans-serif;
   --font-roboto: "Roboto", sans-serif;
 /* gradiente */
-  
+
+/* animacao */
+/* animacao */
+--animate-fade-in-scale: fade-in-scale 0.3s ease-out infinity;
+--animate-fade-leftAnimation: leftPosicao 1s ease-out;
+--animate-fade-leftAnimation2: leftPosicao 1s ease-out;
+
+/* Hover */
+--animate-hover:hover:scale-110 duration-300 ease-out
+@keyframes fade-in-scale {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Keyframes para a animação leftPosicao */
+@keyframes leftPosicao {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 }
 
 
