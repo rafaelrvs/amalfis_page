@@ -1,16 +1,23 @@
-"use client"
+"use client";
 import { useEffect } from "react";
 import { useUser } from "../Context/useContext";
 import NavigationMenu from "./../nav/navigationMenu/navigationMenu";
+import NavigationChamados from './../nav/navigationChamados/navigationChamados';
 
 
 export default function GestaoDeChamados() {
-  const { chamadosAtivos,setChamadoAtivo } = useUser();
- 
+  const { chamadosAtivos, setChamadoAtivo } = useUser();
+
   return (
-    <div>
+    <div className="flex">
       <NavigationMenu />
-      {chamadosAtivos&&<div className="h-[50vh] w-[90vw] bg-black z-index-4 top-[10vh] right-[2vw] fixed">teste</div>}
+      {
+      chamadosAtivos&&
+      
+      <NavigationChamados/>
+      }
+      
+    
     </div>
   );
 }
