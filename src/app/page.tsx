@@ -2,15 +2,16 @@
 import Image from "next/image";
 import { Forms } from "./components/Forms";
 import modifyRouter from "./utilits/function/globalFunction";
-
-
-
-
+import { useUser } from "./Context/useContext";
 
 
 
 
 export default function Home() {
+  const { chamadosAtivos,setChamadoAtivo } = useUser();
+
+
+  
   return (
   
 

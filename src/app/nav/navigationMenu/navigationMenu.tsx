@@ -1,4 +1,5 @@
 "use client"
+import { useUser } from "@/app/Context/useContext";
 import modifyRouter from "@/app/utilits/function/globalFunction";
 import React, { useState } from "react";
 import { CiLogout } from "react-icons/ci";
@@ -8,8 +9,16 @@ import { RxDashboard } from "react-icons/rx";
 import { TfiHeadphoneAlt } from "react-icons/tfi";
 
 
-
 export default function NavigationMenu() {
+    const { chamadosAtivos,setChamadoAtivo } = useUser();
+
+    function activeChamados(){
+        setChamadoAtivo(!chamadosAtivos)
+       
+        
+      } 
+    
+
   return (
     <div className="bg-primary-gradient-800 h-screen w-[100px] flex flex-col items-center drop-shadow-lg justify-between">
       <div className="flex flex-col items-center h-[60%] justify-between">
@@ -21,7 +30,7 @@ export default function NavigationMenu() {
 
         <MdHome className="text-[50px] scale-100 hover:scale-110 duration-300 ease-out" />
         <FaBoxOpen className="text-[50px] scale-100 hover:scale-110 duration-300 ease-out" />
-        <TfiHeadphoneAlt className="text-[50px] scale-100 hover:scale-110 duration-300 ease-out"/>
+        <TfiHeadphoneAlt className="text-[50px] scale-100 hover:scale-110 duration-300 ease-out" onClick={activeChamados}/>
         <RxDashboard className="text-[50px] scale-100 hover:scale-110 duration-300 ease-out" />
       </div>
       <CiLogout className="text-[50px] scale-100 hover:scale-110 duration-300 ease-out mb-[25px]" onClick={()=>{modifyRouter("/")}} />
