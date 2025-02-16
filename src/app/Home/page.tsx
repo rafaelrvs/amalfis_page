@@ -6,13 +6,13 @@ import NavigationChamados from './../nav/navigationChamados/navigationChamados';
 
 
 export default function GestaoDeChamados() {
-  const { chamadosAtivos, setChamadoAtivo } = useUser();
+  const { activeMenu, setActiveMenu } = useUser();
 
   return (
     <div className="flex">
       <NavigationMenu />
       {
-      chamadosAtivos&&
+      activeMenu === "headphone"&&
       
       <NavigationChamados/>
       }

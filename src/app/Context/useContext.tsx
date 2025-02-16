@@ -1,16 +1,13 @@
 "use client";
 import React, { createContext, useContext, useState, ReactNode, Dispatch, SetStateAction } from 'react';
 
-// Definição da interface do contexto
 interface UserContextType {
-  chamadosAtivos: boolean;
-  setChamadoAtivo: Dispatch<SetStateAction<boolean>>;
+  activeMenu: string;
+  setActiveMenu: Dispatch<SetStateAction<string>>;
 }
 
-// Criando o contexto
 const UserContext = createContext<UserContextType | null>(null);
 
-// Hook personalizado para acessar o contexto
 export const useUser = () => {
   const context = useContext(UserContext);
   if (!context) {
@@ -19,16 +16,16 @@ export const useUser = () => {
   return context;
 };
 
-// Provedor do contexto
 interface UserContextProviderProps {
   children: ReactNode;
 }
 
 export function UserContextProvider({ children }: UserContextProviderProps) {
-  const [chamadosAtivos, setChamadoAtivo] = useState(false);
+  // Define "home" como botão ativo inicialmente (pode ser o que preferir)
+  const [activeMenu, setActiveMenu] = useState("home");
 
   return (
-    <UserContext.Provider value={{ chamadosAtivos, setChamadoAtivo }}>
+    <UserContext.Provider value={{ activeMenu, setActiveMenu }}>
       {children}
     </UserContext.Provider>
   );
